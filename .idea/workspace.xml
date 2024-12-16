@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66718a2b-6bf8-495b-b7b5-a3009bc2ee66" name="Changes" comment="Agrego ejercicio transpose_matrix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ejercicios_iniciales/test_transpose_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicios_iniciales/test_transpose_matrix.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ejercicios_iniciales/transpose_matrix.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicios_iniciales/transpose_matrix.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -28,9 +29,9 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2qJOWuYGJKeychH17K44bkDIgtB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -41,7 +42,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python tests.Python tests for test_transpose_matrix.TestTransposeMatrix.test_1.executor": "Run",
+    "Python tests.Python tests for test_transpose_matrix.TestTransposeMatrix.executor": "Run",
+    "Python tests.Python tests for test_transpose_matrix.TestTransposeMatrix.test_1.executor": "Debug",
     "Python.main.executor": "Run",
     "Python.transpose_matrix.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -94,6 +96,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for test_transpose_matrix.TestTransposeMatrix" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="coding_excercises_python" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ejercicios_iniciales" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_transpose_matrix.TestTransposeMatrix&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for test_transpose_matrix.TestTransposeMatrix.test_1" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="coding_excercises_python" />
       <option name="ENV_FILES" value="" />
@@ -112,6 +129,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests for test_transpose_matrix.TestTransposeMatrix.test_1" />
+        <item itemvalue="Python tests.Python tests for test_transpose_matrix.TestTransposeMatrix" />
         <item itemvalue="Python.transpose_matrix" />
       </list>
     </recent_temporary>
@@ -167,7 +185,7 @@
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/ejercicios_iniciales/transpose_matrix.py</url>
           <line>7</line>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

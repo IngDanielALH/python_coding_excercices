@@ -5,8 +5,7 @@ always has at least 1 value; however its width and height are not necessarily th
 
 
 def transpose_matrix(matrix):
-    # Write your code her
-    return []
+    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
 
 
 def son_matrices_iguales(matriz1, matriz2):
