@@ -5,5 +5,11 @@ always has at least 1 value; however its width and height are not necessarily th
 
 
 def transpose_matrix(matrix):
-    # Write your code her
-    return []
+    new_matrix = []
+
+    for i in range(0, len(matrix)):  # renglones
+        new_matrix.append([])
+        for j in range(0, len(matrix[0])):  # columnas
+            new_matrix[i].append(matrix[i][j])  # Agregamos los elementos del renglón
+
+    return new_matrix
