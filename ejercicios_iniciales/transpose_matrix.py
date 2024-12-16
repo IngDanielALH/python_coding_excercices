@@ -5,11 +5,14 @@ always has at least 1 value; however its width and height are not necessarily th
 
 
 def transpose_matrix(matrix):
-    new_matrix = []
+    # Write your code her
+    return []
 
-    for i in range(0, len(matrix)):  # renglones
-        new_matrix.append([])
-        for j in range(0, len(matrix[0])):  # columnas
-            new_matrix[i].append(matrix[i][j])  # Agregamos los elementos del renglón
 
-    return new_matrix
+def son_matrices_iguales(matriz1, matriz2):
+    if len(matriz1) != len(matriz2):
+        return False
+    for fila1, fila2 in zip(matriz1, matriz2):
+        if fila1 != fila2:
+            return False
+    return True
