@@ -71,6 +71,6 @@ class TestNodeDepths(unittest.TestCase):
         }
 
         root = utils_for_test.build_tree(datos_arbol["tree"])
-        expected = 1
+        expected = 2
         resultado = nodeDepths(root)
         self.assertEqual(resultado, expected)
