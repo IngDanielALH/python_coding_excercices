@@ -7,5 +7,4 @@ BinaryTree nodes themselves or None / null.
 
 
 def nodeDepths(root):
-    # Write your code here.
     pass

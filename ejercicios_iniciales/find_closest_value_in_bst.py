@@ -18,20 +18,4 @@ target = 12
 
 
 def find_closest_value_in_bst(tree, target):
-    return node_analyzer(tree, target, tree.value)
-
-
-def node_analyzer(tree, target, closest):
-    if abs(target - closest) > abs(target - tree.value):
-        closest = tree.value  # Actualizar el valor más cercano
-
-    # Continuar la búsqueda en el subárbol izquierdo si el target es menor
-    if target < tree.value and tree.left is not None:
-        return node_analyzer(tree.left, target, closest)
-
-    # Continuar la búsqueda en el subárbol derecho si el target es mayor
-    elif target > tree.value and tree.right is not None:
-        return node_analyzer(tree.right, target, closest)
-
-    # Caso base: devolver el valor más cercano
-    return closest
+    pass
