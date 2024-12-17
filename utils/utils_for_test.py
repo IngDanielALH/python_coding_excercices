@@ -1,4 +1,8 @@
-from tree_node import TreeNode
+class TreeNode:
+    def __init__(self, value):
+        self.value = value
+        self.left = None
+        self.right = None
 
 
 def build_tree(data):

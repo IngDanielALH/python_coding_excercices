@@ -35,29 +35,3 @@ def node_analyzer(tree, target, closest):
 
     # Caso base: devolver el valor más cercano
     return closest
-
-
-def construir_arbol(datos):
-    nodos = {}
-
-    # Crear instancias de los nodos y guardarlos en el diccionario
-    for nodo in datos["nodes"]:
-        nodos[nodo["id"]] = BST(nodo["value"])
-
-    # Establecer las conexiones entre nodos
-    for nodo in datos["nodes"]:
-        if nodo["left"] is not None:
-            nodos[nodo["id"]].left = nodos[nodo["left"]]
-        if nodo["right"] is not None:
-            nodos[nodo["id"]].right = nodos[nodo["right"]]
-
-    # Devolver el nodo raíz
-    return nodos[datos["root"]]
-
-
-# This is the class of the input tree. Do not edit.
-class BST:
-    def __init__(self, value):
-        self.value = value
-        self.left = None
-        self.right = None
