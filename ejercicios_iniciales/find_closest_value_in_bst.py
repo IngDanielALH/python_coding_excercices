@@ -18,8 +18,23 @@ target = 12
 
 
 def find_closest_value_in_bst(tree, target):
-    # Write your code here.
-    pass
+    return node_analyzer(tree, target, tree.value)
+
+
+def node_analyzer(tree, target, closest):
+    if abs(target - closest) > abs(target - tree.value):
+        closest = tree.value  # Actualizar el valor más cercano
+
+    # Continuar la búsqueda en el subárbol izquierdo si el target es menor
+    if target < tree.value and tree.left is not None:
+        return node_analyzer(tree.left, target, closest)
+
+    # Continuar la búsqueda en el subárbol derecho si el target es mayor
+    elif target > tree.value and tree.right is not None:
+        return node_analyzer(tree.right, target, closest)
+
+    # Caso base: devolver el valor más cercano
+    return closest
 
 
 def construir_arbol(datos):
@@ -38,6 +53,24 @@ def construir_arbol(datos):
 
     # Devolver el nodo raíz
     return nodos[datos["root"]]
+
+
+def imprimir_arbol_bst(nodo, nivel=0, prefijo="Root: "):
+    """
+    Imprime un árbol BST de forma estructurada en consola.
+    :param nodo: Nodo actual del árbol (instancia de BST).
+    :param nivel: Nivel del nodo en el árbol (para indentación).
+    :param prefijo: Etiqueta para la impresión del nodo.
+    """
+    if nodo is not None:
+        # Imprime el nodo actual con indentación según el nivel
+        print(" " * (nivel * 4) + prefijo + str(nodo.value))
+
+        # Llama recursivamente para el subárbol izquierdo
+        imprimir_arbol_bst(nodo.left, nivel + 1, "L--- ")
+
+        # Llama recursivamente para el subárbol derecho
+        imprimir_arbol_bst(nodo.right, nivel + 1, "R--- ")
 
 
 # This is the class of the input tree. Do not edit.

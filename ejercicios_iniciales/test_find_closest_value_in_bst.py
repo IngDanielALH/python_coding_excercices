@@ -1,5 +1,5 @@
 import unittest
-from find_closest_value_in_bst import find_closest_value_in_bst, construir_arbol
+from find_closest_value_in_bst import find_closest_value_in_bst, construir_arbol, imprimir_arbol_bst
 
 
 class TestFindClosestValueInBST(unittest.TestCase):
@@ -61,4 +61,4 @@ class TestFindClosestValueInBST(unittest.TestCase):
         root = construir_arbol(datos_arbol)
         target = 100
         resultado = find_closest_value_in_bst(root, target)
-        self.assertEqual(resultado, 13)
+        self.assertEqual(resultado, 100)
