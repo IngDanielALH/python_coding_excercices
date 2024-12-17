@@ -4,7 +4,7 @@ from utils import utils_for_test
 
 
 class TestNodeDepths(unittest.TestCase):
-    def test_closest_value_1(self):
+    def test_node_depths_1(self):
         datos_arbol = {
             "tree": {
                 "nodes": [
@@ -24,5 +24,53 @@ class TestNodeDepths(unittest.TestCase):
 
         root = utils_for_test.build_tree(datos_arbol["tree"])
         expected = 16
+        resultado = nodeDepths(root)
+        self.assertEqual(resultado, expected)
+
+    def test_node_depths_2(self):
+        datos_arbol = {
+            "tree": {
+                "nodes": [
+                    {"id": "1", "left": None, "right": None, "value": 1}
+                ],
+                "root": "1"
+            }
+        }
+
+        root = utils_for_test.build_tree(datos_arbol["tree"])
+        expected = 0
+        resultado = nodeDepths(root)
+        self.assertEqual(resultado, expected)
+
+    def test_node_depths_3(self):
+        datos_arbol = {
+            "tree": {
+                "nodes": [
+                    {"id": "1", "left": "2", "right": None, "value": 1},
+                    {"id": "2", "left": None, "right": None, "value": 2}
+                ],
+                "root": "1"
+            }
+        }
+
+        root = utils_for_test.build_tree(datos_arbol["tree"])
+        expected = 1
+        resultado = nodeDepths(root)
+        self.assertEqual(resultado, expected)
+
+    def test_node_depths_4(self):
+        datos_arbol = {
+            "tree": {
+                "nodes": [
+                    {"id": "1", "left": "2", "right": "3", "value": 1},
+                    {"id": "2", "left": None, "right": None, "value": 2},
+                    {"id": "3", "left": None, "right": None, "value": 3}
+                ],
+                "root": "1"
+            }
+        }
+
+        root = utils_for_test.build_tree(datos_arbol["tree"])
+        expected = 1
         resultado = nodeDepths(root)
         self.assertEqual(resultado, expected)
