@@ -7,4 +7,16 @@ BinaryTree nodes themselves or None / null.
 
 
 def nodeDepths(root):
+    return helper(root, 0)
     pass
+
+
+def helper(node, depth):
+    if node is None:
+        return 0
+
+    # Suma de la profundidad actual más las profundidades de los subárboles
+    left_depths = helper(node.left, depth + 1)
+    right_depths = helper(node.right, depth + 1)
+
+    return depth + left_depths + right_depths
