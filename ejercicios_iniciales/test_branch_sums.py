@@ -1,5 +1,6 @@
 import unittest
-from branch_sums import branchSums, build_tree
+from branch_sums import branchSums
+from utils import utils_for_test
 
 
 class TestBranchSums(unittest.TestCase):
@@ -20,6 +21,6 @@ class TestBranchSums(unittest.TestCase):
             "root": "1"
         }
 
-        root = build_tree(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         expected = [15, 16, 18, 10, 11]
         self.assertEqual(expected, branchSums(root), "Las resultados no son iguales")

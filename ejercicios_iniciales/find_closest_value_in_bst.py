@@ -55,24 +55,6 @@ def construir_arbol(datos):
     return nodos[datos["root"]]
 
 
-def imprimir_arbol_bst(nodo, nivel=0, prefijo="Root: "):
-    """
-    Imprime un árbol BST de forma estructurada en consola.
-    :param nodo: Nodo actual del árbol (instancia de BST).
-    :param nivel: Nivel del nodo en el árbol (para indentación).
-    :param prefijo: Etiqueta para la impresión del nodo.
-    """
-    if nodo is not None:
-        # Imprime el nodo actual con indentación según el nivel
-        print(" " * (nivel * 4) + prefijo + str(nodo.value))
-
-        # Llama recursivamente para el subárbol izquierdo
-        imprimir_arbol_bst(nodo.left, nivel + 1, "L--- ")
-
-        # Llama recursivamente para el subárbol derecho
-        imprimir_arbol_bst(nodo.right, nivel + 1, "R--- ")
-
-
 # This is the class of the input tree. Do not edit.
 class BST:
     def __init__(self, value):
