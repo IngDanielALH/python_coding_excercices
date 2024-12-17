@@ -1,5 +1,6 @@
 import unittest
-from find_closest_value_in_bst import find_closest_value_in_bst, construir_arbol
+from find_closest_value_in_bst import find_closest_value_in_bst
+from utils import utils_for_test
 
 
 class TestFindClosestValueInBST(unittest.TestCase):
@@ -20,7 +21,7 @@ class TestFindClosestValueInBST(unittest.TestCase):
             "root": "10"
         }
 
-        root = construir_arbol(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         target = 12
         resultado = find_closest_value_in_bst(root, target)
         self.assertEqual(resultado, 13)
@@ -58,7 +59,7 @@ class TestFindClosestValueInBST(unittest.TestCase):
             "root": "100"
         }
 
-        root = construir_arbol(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         target = 100
         resultado = find_closest_value_in_bst(root, target)
         self.assertEqual(resultado, 100)
@@ -96,7 +97,7 @@ class TestFindClosestValueInBST(unittest.TestCase):
             "root": "100"
         }
 
-        root = construir_arbol(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         target = 208
         resultado = find_closest_value_in_bst(root, target)
         self.assertEqual(resultado, 208)
@@ -134,7 +135,7 @@ class TestFindClosestValueInBST(unittest.TestCase):
             "root": "100"
         }
 
-        root = construir_arbol(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         target = 4500
         resultado = find_closest_value_in_bst(root, target)
         self.assertEqual(resultado, 4500)
@@ -172,7 +173,7 @@ class TestFindClosestValueInBST(unittest.TestCase):
             "root": "100"
         }
 
-        root = construir_arbol(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         target = -70
         resultado = find_closest_value_in_bst(root, target)
         self.assertEqual(resultado, -51)
@@ -210,7 +211,7 @@ class TestFindClosestValueInBST(unittest.TestCase):
             "root": "100"
         }
 
-        root = construir_arbol(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol)
         target = 2000
         resultado = find_closest_value_in_bst(root, target)
         self.assertEqual(resultado, 1001)
