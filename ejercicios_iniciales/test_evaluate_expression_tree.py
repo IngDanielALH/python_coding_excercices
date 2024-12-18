@@ -16,7 +16,7 @@ class TestEvaluateExpressionTree(unittest.TestCase):
             }
         }
 
-        root = utils_for_test.build_tree(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol["tree"])
         target = 5
         resultado = evaluateExpressionTree(root)
         self.assertEqual(resultado, target)
@@ -33,7 +33,7 @@ class TestEvaluateExpressionTree(unittest.TestCase):
             }
         }
 
-        root = utils_for_test.build_tree(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol["tree"])
         target = -1
         resultado = evaluateExpressionTree(root)
         self.assertEqual(resultado, target)
@@ -50,7 +50,7 @@ class TestEvaluateExpressionTree(unittest.TestCase):
             }
         }
 
-        root = utils_for_test.build_tree(datos_arbol)
+        root = utils_for_test.build_tree(datos_arbol["tree"])
         target = -1
         resultado = evaluateExpressionTree(root)
         self.assertEqual(resultado, target)
