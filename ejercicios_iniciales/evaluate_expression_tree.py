@@ -40,6 +40,6 @@ def helper(node):
     if node.value == -2:
         return helper(node.left) - helper(node.right)
     if node.value == -3:
-        return helper(node.left) // helper(node.right)
+        return int(helper(node.left) / helper(node.right))
     if node.value == -4:
         return helper(node.left) * helper(node.right)
