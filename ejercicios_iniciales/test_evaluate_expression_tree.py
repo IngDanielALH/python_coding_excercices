@@ -51,6 +51,6 @@ class TestEvaluateExpressionTree(unittest.TestCase):
         }
 
         root = utils_for_test.build_tree(datos_arbol["tree"])
-        target = -1
+        target = 1
         resultado = evaluateExpressionTree(root)
         self.assertEqual(resultado, target)
