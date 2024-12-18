@@ -54,3 +54,22 @@ class TestEvaluateExpressionTree(unittest.TestCase):
         target = 1
         resultado = evaluateExpressionTree(root)
         self.assertEqual(resultado, target)
+
+    def test_evaluate_expression_tree_9(self):
+        datos_arbol = {
+            "tree": {
+                "nodes": [
+                    {"id": "1", "left": "9", "right": "3", "value": -3},
+                    {"id": "9", "left": None, "right": None, "value": 9},
+                    {"id": "3", "left": "4", "right": "6", "value": -2},
+                    {"id": "4", "left": None, "right": None, "value": 4},
+                    {"id": "6", "left": None, "right": None, "value": 6}
+                ],
+                "root": "1"
+            }
+        }
+
+        root = utils_for_test.build_tree(datos_arbol["tree"])
+        target = -4
+        resultado = evaluateExpressionTree(root)
+        self.assertEqual(resultado, target)
