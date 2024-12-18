@@ -28,4 +28,26 @@ tree =
 
 
 def evaluateExpressionTree(tree):
-    pass
+    print("Respuesta del helper:", helper(tree))
+    return helper(tree)
+
+
+def helper(node):
+    if node.value >= 0:
+        return node.value
+
+    if node.value == -1:
+        # print("suma")
+        val1 = helper(node.left)
+        val2 = helper(node.right)
+        # print("val1: ")
+        # print(val1)
+        # print("val2: ")
+        # print(val2)
+        return val1 + val2
+    if node.value == -2:
+        return helper(node.left) - helper(node.right)
+    if node.value == -3:
+        return helper(node.left) // helper(node.right)
+    if node.value == -4:
+        return helper(node.left) * helper(node.right)
