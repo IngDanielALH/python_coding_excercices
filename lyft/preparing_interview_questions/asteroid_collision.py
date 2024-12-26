@@ -23,9 +23,8 @@ Explanation: The 8 and -8 collide exploding each other.
 
 Example 3:
 
-Input: asteroids = [10,2,-5]
-Output: [10]
-Explanation: The 2 and -5 collide resulting in -5. The 10 and -5 collide resulting in 10.
+Input: asteroids = [-1, -3, 5, 9]
+Output: [-1, -3, 5, 9]
 
 Constraints:
 
@@ -42,4 +41,21 @@ def asteroidCollision(asteroids):
     :type asteroids: List[int]
     :rtype: List[int]
     """
-    pass
+    stack = []
+
+    for asteroid in asteroids:
+        while stack and asteroid < 0 < stack[-1]:
+            if stack[-1] < -asteroid:
+                stack.pop()
+                continue
+            elif stack[-1] == -asteroid:
+                stack.pop()
+            break
+        else:
+            stack.append(asteroid)
+
+    return stack
+
+
+
+
