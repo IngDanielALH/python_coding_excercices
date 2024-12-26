@@ -34,6 +34,29 @@ Proceso:
         Resultado: 1 combinación.
         Salida final: [2, 1]
 """
+from collections import Counter
+
 
 def process_queries(a, b, queries):
+    b_counter = Counter(b)
+    output = []
+
+    for query in queries:
+        if query[0] == 1:
+            X = query[1]
+
+            count = 0
+
+            for ai in a:
+                required_value = X - ai
+
+                if required_value in b_counter:
+                    count += b_counter[required_value]
+
+            output.append(count)
+        elif query[0] == 0:
+            i, X = query[1], query[2]
+            a[i] = X
+
+    return output
     pass
