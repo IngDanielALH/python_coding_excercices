@@ -60,3 +60,7 @@ def process_queries(a, b, queries):
 
     return output
     pass
+
+
+    #count = sum(b_counter[X - ai] for ai in a if (X - ai) in b_counter)
+
