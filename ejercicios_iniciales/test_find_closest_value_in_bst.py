@@ -4,7 +4,6 @@ from utils import utils_for_test
 
 
 class TestFindClosestValueInBST(unittest.TestCase):
-
     def test_closest_value_1(self):
         datos_arbol = {
             "nodes": [
