@@ -43,20 +43,20 @@ def process_queries(a, b, queries):
 
     for query in queries:
         if query[0] == 1:
-            X = query[1]
+            x = query[1]
 
             count = 0
 
             for ai in a:
-                required_value = X - ai
+                required_value = x - ai
 
                 if required_value in b_counter:
                     count += b_counter[required_value]
 
             output.append(count)
         elif query[0] == 0:
-            i, X = query[1], query[2]
-            a[i] = X
+            i, x = query[1], query[2]
+            a[i] = x
 
     return output
     pass
