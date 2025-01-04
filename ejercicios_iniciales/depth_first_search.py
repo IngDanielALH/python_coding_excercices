@@ -33,4 +33,8 @@ class Node:
 
     def depthFirstSearch(self, array):
         # Write your code here.
+        array.append(self.name)  # Agregamos al array el nombre del nodo en el que estamos
+        for node in self.children:
+            node.depthFirstSearch(array)
+        return array
         pass
