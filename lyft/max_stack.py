@@ -29,3 +29,38 @@ Explanation:
     getMax() -> Maximum is now 5.
     top() -> Top element is 1.
 """
+
+
+class Stack:
+    def __init__(self):
+        self.stack_arr = []
+        self.max_stack = []
+
+    def push(self, value):
+        self.stack_arr.append(value)
+        # Update max stack
+        if not self.max_stack or value >= self.max_stack[-1]:
+            self.max_stack.append(value)
+
+    def pop(self):
+        if not self.stack_arr:
+            print("Stack is empty. Nothing to pop.")
+            return None
+        popped = self.stack_arr.pop()
+        # Update max stack if necessary
+        if popped == self.max_stack[-1]:
+            self.max_stack.pop()
+        return popped
+
+    def top(self):
+        if not self.stack_arr:
+            print("Stack is empty. No top element.")
+            return None
+        return self.stack_arr[-1]
+
+    def get_max(self):
+        if not self.max_stack:
+            print("Stack is empty. No maximum value.")
+            return None
+        return self.max_stack[-1]
+
