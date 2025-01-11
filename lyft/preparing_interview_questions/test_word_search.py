@@ -26,6 +26,6 @@ class test_word_search(unittest.TestCase):
                  ["S", "F", "C", "S"],
                  ["A", "D", "E", "E"]]
         word = "ABCB"
-        expected = True
+        expected = False
         result = exist(board, word)
         self.assertEqual(expected, result)
