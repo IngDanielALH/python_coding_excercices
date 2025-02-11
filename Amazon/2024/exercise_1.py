@@ -37,3 +37,6 @@ Aquí tienes el texto extraído de la imagen:
 
 Hence the answer is [0, 1, 2, 0, 3]
 """
+
+def getServerIds():
+    pass
