@@ -11,27 +11,45 @@ will return a given number of results, abstracting away the need to do paginatio
 
 Your task will be to implement ResultFetcher.fetch()
 """
+from __future__ import annotations
+
+from typing import TypedDict
+
+MAX_RESULTS = 103
+PAGE_SIZE = 10
+
+
+class FetchPageResult(TypedDict):
+    next_page: int | None
+    results: list[int]
+
+    # External API -- Should not be modified for solution
+
+
+def fetch_page(page: int) -> FetchPageResult:
+    """
+    Return the page of results and the next page. Pages are 0 indexed.
+    returns:
+    {
+        "results": [...],
+        "next_page": 3
+    }
+    """
+    if page * PAGE_SIZE > MAX_RESULTS:
+        return {"next_page": None, "results": []}
+    return {
+        "next_page": page + 1,
+        "results": list(
+            range(page * PAGE_SIZE, min(MAX_RESULTS, (page + 1) * PAGE_SIZE))
+        ),
+    }
 
 
 class ResultFetcher:
-    def __init__(self):
-        self.current_position = 0  # Tracks the current position in the result set
 
-    def fetch_page(self, start: int, size: int) -> list[int]:
-        """Simulate fetching a page of results from a paginated API."""
-        all_data = list(range(103))  # Example data, replace with actual API logic if needed
-        return all_data[start:start + size]
+    def __init__(self) -> None:
+        pass
 
     def fetch(self, num_results: int) -> list[int]:
-        """Fetch a given number of results, abstracting away pagination."""
         results = []
-        while num_results > 0:
-            # Fetch results in chunks of 10 (or remaining results)
-            page_size = min(10, num_results)
-            page = self.fetch_page(self.current_position, page_size)
-            if not page:  # If no more results are available, stop fetching
-                break
-            results.extend(page)
-            self.current_position += len(page)  # Update position
-            num_results -= len(page)  # Decrease the number of results needed
-        return results
+        return results[:num_results]
