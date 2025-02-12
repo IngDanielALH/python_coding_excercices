@@ -40,4 +40,28 @@ Hence the answer is [0, 1, 2, 0, 3]
 
 
 def getServerIds(num_servers, requests):
-    pass
+    # Inicializamos un diccionario para llevar el control de las solicitudes por servidor
+    servers = {i: 0 for i in range(num_servers)}
+    assigned_servers = []
+
+    for request_i in requests:
+        if request_i == 0:
+            # Si request_i es 0, solo podemos elegir el servidor 0
+            chosen_server = 0
+        else:
+            # Filtrar servidores dentro del rango permitido (0 a request_i - 1)
+            valid_servers = {k: v for k, v in servers.items() if k < request_i}
+
+            # Ordenar servidores por menor número de solicitudes y luego por menor ID
+            sorted_servers = sorted(valid_servers.items(), key=lambda x: (x[1], x[0]))
+
+            # Elegir el servidor con menor carga (el primer elemento de la lista ordenada)
+            chosen_server = sorted_servers[0][0]
+
+        # Incrementar la carga del servidor elegido
+        servers[chosen_server] += 1
+
+        # Guardar la asignación del servidor
+        assigned_servers.append(chosen_server)
+
+    return assigned_servers
