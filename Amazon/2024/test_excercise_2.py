@@ -1,4 +1,3 @@
-import random
 import unittest
 from excercise_2 import findRequestsInQueue
 
