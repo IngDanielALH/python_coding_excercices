@@ -30,7 +30,26 @@ time = 3 seconds, request 3 is removed because it is processed. The number of re
 
 The answer is [4, 2, 1, 0].
 """
+from collections import defaultdict
 
 
 def findRequestsInQueue(requests):
+    time = 1
+    result = [len(requests)]  # Number of requests at time
+    waitTimes = generateDictOfTimes(requests)
+    while requests:
+        indices_a_eliminar = {0}  # Eliminamos el índice 0
+        indices_a_eliminar.update(waitTimes.get(time, []))
+        requests = [requests[i] for i in range(len(requests)) if i not in indices_a_eliminar]
+        waitTimes = generateDictOfTimes(requests)
+        result.append(len(requests))
+        time += 1
+    return result
     pass
+
+
+def generateDictOfTimes(requests):
+    requestsDict = defaultdict(list)
+    for index, value in enumerate(requests):
+        requestsDict[value].append(index)
+    return dict(requestsDict)
