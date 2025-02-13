@@ -30,26 +30,26 @@ time = 3 seconds, request 3 is removed because it is processed. The number of re
 
 The answer is [4, 2, 1, 0].
 """
-from collections import defaultdict
+
+from collections import defaultdict, deque
 
 
 def findRequestsInQueue(requests):
-    time = 1
-    result = [len(requests)]  # Number of requests at time
-    waitTimes = generateDictOfTimes(requests)
-    while requests:
-        indices_a_eliminar = {0}  # Eliminamos el índice 0
-        indices_a_eliminar.update(waitTimes.get(time, []))
-        requests = [requests[i] for i in range(len(requests)) if i not in indices_a_eliminar]
-        waitTimes = generateDictOfTimes(requests)
-        result.append(len(requests))
-        time += 1
+    time = 0  # Se procesa el primer request en t=0
+    result = []
+
+    queue = deque(requests)  # Solo mantenemos los valores, no los índices
+
+    while queue:
+        result.append(len(queue))  # Número de requests en la cola en este instante
+
+        # Procesar el primer elemento en la cola (FIFO)
+        queue.popleft()
+
+        # Eliminar todos los requests que expiran en este tiempo
+        queue = deque(req for req in queue if time + 1 < req)
+
+        time += 1  # Avanzamos el tiempo
+
+    result.append(0)  # La cola está vacía
     return result
-    pass
-
-
-def generateDictOfTimes(requests):
-    requestsDict = defaultdict(list)
-    for index, value in enumerate(requests):
-        requestsDict[value].append(index)
-    return dict(requestsDict)
