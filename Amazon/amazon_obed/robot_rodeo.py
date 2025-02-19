@@ -40,4 +40,31 @@ Constraints
 
 
 def doesCicleExist(commands):
-    pass
+    results = []
+
+    for command in commands:
+        # Estado inicial
+        x, y = 0, 0  # Posición inicial
+        direction = 0  # Dirección inicial (0 = Arriba, 1 = Derecha, 2 = Abajo, 3 = Izquierda)
+
+        # Mapeo de movimientos en las cuatro direcciones
+        moves = [(0, 1), (1, 0), (0, -1), (-1, 0)]
+
+        # Ejecutar los comandos una vez
+        for cmd in command:
+            if cmd == 'G':  # Mover hacia adelante en la dirección actual
+                dx, dy = moves[direction]
+                x += dx
+                y += dy
+            elif cmd == 'L':  # Girar a la izquierda
+                direction = (direction - 1) % 4
+            elif cmd == 'R':  # Girar a la derecha
+                direction = (direction + 1) % 4
+
+        # Comprobar si el robot está dentro de un círculo
+        if (x == 0 and y == 0) or direction != 0:
+            results.append("YES")
+        else:
+            results.append("NO")
+
+    return results

@@ -12,3 +12,13 @@ class testRobotRodeo(unittest.TestCase):
         commands = ["GRGL"]
         expected = ["NO"]
         self.assertEqual(expected, doesCicleExist(commands))
+
+    def test_3(self):
+        commands = ["GRGRGRG"]
+        expected = ["YES"]
+        self.assertEqual(expected, doesCicleExist(commands))
+
+    def test_4(self):
+        commands = ["GLGLGGLGL"]
+        expected = ["NO"]
+        self.assertEqual(expected, doesCicleExist(commands))
