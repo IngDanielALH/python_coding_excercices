@@ -52,4 +52,4 @@ class ResultFetcher:
 
     def fetch(self, num_results: int) -> list[int]:
         results = []
-        return results[:num_results]
+        return results
