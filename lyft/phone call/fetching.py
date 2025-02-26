@@ -14,16 +14,17 @@ Your task will be to implement ResultFetcher.fetch()
 from __future__ import annotations
 from typing import TypedDict
 
-
 # These numbers are for testing only and may be changed by the interviewer.
 # Do not use them in your solution
 
 MAX_RESULTS = 103
 PAGE_SIZE = 1
 
+
 class FetchPageResult(TypedDict):
     next_page: int | None
     results: list[int]
+
 
 # External API -- Should not be modified for solution
 def fetch_page(page: int) -> FetchPageResult:
@@ -46,7 +47,8 @@ def fetch_page(page: int) -> FetchPageResult:
         ),
     }
 
-################ Implement Solution here ################
+
+# Implement Solution here
 
 class ResultFetcher:
     def __init__(self) -> None:
