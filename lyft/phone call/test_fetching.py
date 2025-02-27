@@ -9,25 +9,25 @@ class TestFetcher(unittest.TestCase):
 
     def test1(self):
         expected = list(range(5))
-        output = self.fetcher.fetch(num_results = 5)
+        output = self.fetcher.fetch(num_results=5, start_page=0)
         self.assertEqual(expected, output)
 
     def test2(self):
         expected = list(range(5, 7))
-        output = self.fetcher.fetch(num_results = 2)
+        output = self.fetcher.fetch(num_results=2, start_page=5)
         self.assertEqual(expected, output)
 
     def test3(self):
         expected = list(range(7, 14))
-        output = self.fetcher.fetch(num_results = 7)
+        output = self.fetcher.fetch(num_results=7, start_page=7)
         self.assertEqual(expected, output)
 
     def test4(self):
         expected = list(range(14, 103))
-        output = self.fetcher.fetch(num_results = 103)
+        output = self.fetcher.fetch(num_results=103, start_page=14)
         self.assertEqual(expected, output)
 
     def test5(self):
         expected = []
-        output = self.fetcher.fetch(num_results = 10)
+        output = self.fetcher.fetch(num_results=10, start_page=0)
         self.assertEqual(expected, output)

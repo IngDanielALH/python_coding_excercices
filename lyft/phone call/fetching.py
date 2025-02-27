@@ -16,7 +16,7 @@ from __future__ import annotations
 from typing import TypedDict
 
 MAX_RESULTS = 103
-PAGE_SIZE = 10
+PAGE_SIZE = 1
 
 
 class FetchPageResult(TypedDict):
@@ -50,6 +50,10 @@ class ResultFetcher:
     def __init__(self) -> None:
         pass
 
-    def fetch(self, num_results: int) -> list[int]:
+    def fetch(self, num_results: int, start_page: int) -> list[int]:
         results = []
+        for num in range(start_page, start_page + num_results):
+            page_data = fetch_page(num)  # Llamada a la API paginada
+            if page_data['results']:  # Verifica si la lista no está vacía
+                results.append(page_data['results'][0])
         return results
