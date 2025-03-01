@@ -15,32 +15,29 @@ def generate_biggest_number(number, k):
 
 
 def create_digit_dict(num_str):
-    """
-    Crea un diccionario donde las claves son índices consecutivos y
-    los valores son listas de dígitos agrupados en orden descendente.
-    """
-    digit_count = Counter(num_str)  # Contar ocurrencias de cada dígito
-    unique_digits = sorted(digit_count.keys(), reverse=True)  # Ordenar los dígitos de mayor a menor
-    return {int(d): [int(d)] * digit_count[d] for d in unique_digits}  # Crear diccionario con listas
+
+    digit_count = Counter(num_str)
+    unique_digits = sorted(digit_count.keys(), reverse=True)
+    return {int(d): [int(d)] * digit_count[d] for d in unique_digits}
 
 
 def form_number_from_dict(num_dict, k):
     result = []
-    last_digit = None  # Último dígito agregado
-    count = 0  # Contador de repeticiones consecutivas
+    last_digit = None
+    count = 0
 
-    while any(num_dict.values()):  # Mientras haya valores en alguna lista
-        for key in sorted(num_dict.keys(), reverse=True):  # Recorremos en orden descendente
-            if num_dict[key]:  # Si la lista tiene elementos
+    while any(num_dict.values()):
+        for key in sorted(num_dict.keys(), reverse=True):
+            if num_dict[key]:
                 if last_digit == key and count >= k:
-                    continue  # Evita repetir el mismo número más de K veces seguidas
+                    continue
 
-                result.append(num_dict[key].pop(0))  # Agregar el número al resultado
+                result.append(num_dict[key].pop(0))
                 if last_digit == key:
                     count += 1
                 else:
                     last_digit = key
                     count = 1
-                break  # Pasamos al siguiente número para evitar más de K consecutivos
+                break
 
     return "".join(map(str, result))
