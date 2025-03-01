@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66718a2b-6bf8-495b-b7b5-a3009bc2ee66" name="Changes" comment="Se agrega primer test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ejercicios_iniciales/branch_sums.py" beforeDir="false" afterPath="$PROJECT_DIR$/ejercicios_iniciales/branch_sums.py" afterDir="false" />
+    <list default="true" id="66718a2b-6bf8-495b-b7b5-a3009bc2ee66" name="Changes" comment="ignorando workspace.xml">
+      <change afterPath="$PROJECT_DIR$/Turing/create_biggest_number.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/ejecicios" />
+        <entry key="$PROJECT_DIR$" value="feature/soluciones" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -41,9 +40,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for test_robot_rodeo.testRobotRodeo.test_1.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "feature/soluciones",
+    "git-widget-placeholder": "feature/ejecicios",
     "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
@@ -111,14 +111,31 @@
       <option name="project" value="LOCAL" />
       <updated>1734399660344</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ignorando workspace.xml">
+      <option name="closed" value="true" />
+      <created>1740797324623</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740797324623</updated>
+    </task>
+    <task id="LOCAL-00005" summary="ignorando workspace.xml">
+      <option name="closed" value="true" />
+      <created>1740797378894</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740797378894</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Commit inicial" />
     <MESSAGE value="Se agrega enunciado y clase de arbol del ejercicio" />
     <MESSAGE value="Se agrega primer test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega primer test" />
+    <MESSAGE value="ignorando workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignorando workspace.xml" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
