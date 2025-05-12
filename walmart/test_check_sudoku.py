@@ -43,6 +43,12 @@ class TestCheckSudoku(unittest.TestCase):
         sudoku = []
         self.assertFalse(check(sudoku))
 
+    def test_negative_sudoku_1(self):
+        sudoku = [[-1, 2, 3],
+                  [1, 3, 2],
+                  [3, 1, 2]]
+        self.assertFalse(check(sudoku))
+
 
 if __name__ == "__main__":
     unittest.main()
