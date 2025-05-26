@@ -14,7 +14,7 @@ def calculate_changes(password, k):
     for j in range(k):
         indices = [i for i in range(j, n, k)]
         reflected = [n - 1 - i for i in indices]
-        all_indices = list(set(indices + reflected))  # Eliminar duplicados
+        all_indices = list(set(indices + reflected))
 
         char_count = Counter(password[i] for i in all_indices)
         common_char, _ = char_count.most_common(1)[0]
