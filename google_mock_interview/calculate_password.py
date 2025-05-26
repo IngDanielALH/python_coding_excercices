@@ -7,18 +7,19 @@ from collections import Counter
 
 
 def calculate_changes(password, k):
-    password = list(password)  # ✅ Esto es clave
+    password = list(password)
     total_changes = 0
-    len_password = len(password)
+    n = len(password)
 
     for j in range(k):
-        indices = [i for i in range(j, len_password, k)]
-        indices += [len_password - 1 - i for i in indices]  # Reflejo para palíndromo
+        indices = [i for i in range(j, n, k)]
+        reflected = [n - 1 - i for i in indices]
+        all_indices = list(set(indices + reflected))  # Eliminar duplicados
 
-        group = [password[i] for i in indices]
-        common_char = Counter(group).most_common(1)[0][0]
+        char_count = Counter(password[i] for i in all_indices)
+        common_char, _ = char_count.most_common(1)[0]
 
-        for i in indices:
+        for i in all_indices:
             if password[i] != common_char:
                 password[i] = common_char
                 total_changes += 1
