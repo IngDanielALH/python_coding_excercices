@@ -22,8 +22,23 @@ times = [
 Sample output
 3
 """
-
+import heapq
 
 def laptopRentals(times):
-    # Write your code here.
-    return 0
+    if not times:
+        return 0
+
+        # Ordenar por el tiempo de inicio
+    times.sort(key=lambda x: x[0])
+
+    # Min-heap para los tiempos de finalización
+    min_heap = []
+    heapq.heappush(min_heap, times[0][1]) # mete tiempo final
+
+    for i in range(1, len(times)):
+        if min_heap[0] <= times[i][0]:
+            heapq.heappop(min_heap)  # Se libera una laptop
+
+        heapq.heappush(min_heap, times[i][1])  # Se ocupa una laptop (o la misma)
+
+    return len(min_heap)
