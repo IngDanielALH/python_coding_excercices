@@ -8,3 +8,9 @@ class testJuiceBottling(unittest.TestCase):
         expected = [1, 2]
         actual = juiceBottling(prices)
         self.assertEqual(actual, expected)
+
+    def test_case_2(self):
+        prices = [0, 1, 3, 2, 4]
+        expected = [2 , 2]
+        actual = juiceBottling(prices)
+        self.assertEqual(actual, expected)

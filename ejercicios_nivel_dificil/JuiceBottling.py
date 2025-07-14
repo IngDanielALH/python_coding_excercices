@@ -21,5 +21,22 @@ To maximize revenue, we split the juice into quantities of 1 and 2, giving a rev
 
 
 def juiceBottling(prices):
-    # Write your code here.
-    return []
+    numSizes = len(prices)
+    maxProfit = [0] * numSizes
+    dividingPoints = [0] * numSizes
+
+    for size in range(numSizes):
+        for dividingPoint in range(size + 1):
+            possibleProfit = maxProfit[size - dividingPoint] + prices[dividingPoint]
+
+            if possibleProfit > maxProfit[size]:
+                maxProfit[size] = possibleProfit
+                dividingPoints[size] = dividingPoint
+
+    solution = []
+    currentDividingPoint = numSizes - 1
+    while currentDividingPoint > 0:
+        solution.append(dividingPoints[currentDividingPoint])
+        currentDividingPoint -= dividingPoints[currentDividingPoint]
+
+    return solution
