@@ -65,3 +65,5 @@ Explicación del Ejemplo:
 
     Minuto 4: La manzana en (2,2) se pudre.
 """
+
+def calculate_steps(box):
