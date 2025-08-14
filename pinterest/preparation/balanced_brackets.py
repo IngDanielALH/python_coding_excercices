@@ -42,7 +42,7 @@ Each of the next lines contains a single string , a sequence of brackets.
 
 def test_case(message: str, expected: str, actual: str) -> None:
     if actual == expected:
-        print(f"Test case {message}: SUCCESS")
+        print(f"Test case: {message} SUCCESS")
     else:
         print(f"Test case {message}: FAILED")
         print(f"Expected {expected}, Got {actual}")
@@ -50,4 +50,29 @@ def test_case(message: str, expected: str, actual: str) -> None:
 
 
 def isBalanced(s: str) -> str:
+    brackets_pair = {'{': '}', '[': ']', '(': ')'}
+    stack = []
+
+    if len(s) % 2 != 0:
+        return "NO"
+
+    for char in s:
+        if char in brackets_pair.keys():
+            stack.append(char)
+        elif brackets_pair[stack[-1]] == char:
+            stack.pop()
+        else:
+            return "NO"
+
+    return "YES"
     pass
+
+
+if __name__ == '__main__':
+    #test_case("Try test function", "YES", "YES")
+    #test_case("Happy path", "YES", isBalanced("{[()]}"))
+    #test_case("Incomplete str", "NO", isBalanced("{[()]"))
+    #test_case("Not balanced", "NO", isBalanced("{([)]}"))
+    test_case("Not closed", "NO", isBalanced("(()"))
+    test_case("Pair not balanced", "NO", isBalanced("(("))
+
