@@ -100,13 +100,13 @@ def getTeleports(ladders, snakes):
     return teleports
 
 
-def getRangeOfRoll(currentPosition):
+def getRangeOfRoll(currentPosition, teleports):
     posibleRange = []
     currentRoll = currentPosition[1] + 1
     for i in range(1, 7):
         accesibleSquare = currentPosition[0] + i
         posibleRange.append((accesibleSquare, currentRoll))
-    return posibleRange
+    return manageTeleports(posibleRange, teleports)
 
 
 def manageTeleports(posibleSquares, teleports):
@@ -122,19 +122,20 @@ def manageTeleports(posibleSquares, teleports):
 def quickestWayUp(ladders, snakes):
     teleports = getTeleports(ladders, snakes)
     queue = deque([(1, 0)])
-    visited = set()
+    visited = {1}
 
     while queue:
-        currentSquare = queue.popleft()
-        squareValue = currentSquare[0]
-        if squareValue not in visited:
-            if squareValue == 100:
-                return currentSquare[1]
-            visited.add(currentSquare[0])
-            posibleSquares = getRangeOfRoll(currentSquare)
-            finalSquares = manageTeleports(posibleSquares, teleports)
-            for square in finalSquares:
-                queue.append(square)
+        currentSquare, currentMoves = queue.popleft()
+
+        if currentSquare == 100:
+            return currentMoves
+
+        finalSquares = getRangeOfRoll((currentSquare, currentMoves), teleports)
+
+        for nextSquare, nextMoves in finalSquares:
+            if nextSquare not in visited:
+                visited.add(nextSquare)
+                queue.append((nextSquare, nextMoves))
 
     return -1
     pass
