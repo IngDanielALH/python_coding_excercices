@@ -88,7 +88,53 @@ Sample Output
 3
 5
 """
+from collections import deque
+
+
+def getTeleports(ladders, snakes):
+    teleports = {}
+    for inicio, fin in ladders:
+        teleports[inicio] = fin
+    for inicio, fin in snakes:
+        teleports[inicio] = fin
+    return teleports
+
+
+def getRangeOfRoll(currentPosition):
+    posibleRange = []
+    currentRoll = currentPosition[1] + 1
+    for i in range(1, 7):
+        accesibleSquare = currentPosition[0] + i
+        posibleRange.append((accesibleSquare, currentRoll))
+    return posibleRange
+
+
+def manageTeleports(posibleSquares, teleports):
+    final_destinations = []
+
+    for position, moves in posibleSquares:
+        final_pos = teleports.get(position, position)
+        final_destinations.append((final_pos, moves))
+
+    return final_destinations
 
 
 def quickestWayUp(ladders, snakes):
+    teleports = getTeleports(ladders, snakes)
+    queue = deque([(1, 0)])
+    visited = set()
+
+    while queue:
+        currentSquare = queue.popleft()
+        squareValue = currentSquare[0]
+        if squareValue not in visited:
+            if squareValue == 100:
+                return currentSquare[1]
+            visited.add(currentSquare[0])
+            posibleSquares = getRangeOfRoll(currentSquare)
+            finalSquares = manageTeleports(posibleSquares, teleports)
+            for square in finalSquares:
+                queue.append(square)
+
+    return -1
     pass
