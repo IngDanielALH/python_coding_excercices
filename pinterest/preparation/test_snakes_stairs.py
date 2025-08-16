@@ -27,3 +27,20 @@ class TestSnakesAndLadders(unittest.TestCase):
 
         result = quickestWayUp(ladders, snakes)
         self.assertEqual(result, expected_result)
+
+    def test_unreachable_case(self):
+        """
+        Prueba un caso donde la casilla 100 es inalcanzable.
+        """
+        print("\nEjecutando Test Case Inalcanzable...")
+        # No se necesita ninguna escalera
+        ladders = []
+        # Creamos una "muralla" de serpientes del 94 al 99
+        snakes = [
+            [99, 10], [98, 11], [97, 12],
+            [96, 13], [95, 14], [94, 15]
+        ]
+        expected_result = -1
+
+        result = quickestWayUp(ladders, snakes)
+        self.assertEqual(result, expected_result)
