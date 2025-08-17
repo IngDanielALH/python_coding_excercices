@@ -21,7 +21,7 @@ class TestIceCreamParlor(unittest.TestCase):
         result = icecreamParlor(m, cost)
         self.assertEqual(sorted(result), expected)
 
-    def test_pair_at_end_corrected(self):
+    def test_pair_at_end(self):
         """
         Prueba un caso donde la ÚNICA solución está al final de la lista.
         """
