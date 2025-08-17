@@ -22,9 +22,11 @@ class TestIceCreamParlor(unittest.TestCase):
         self.assertEqual(sorted(result), expected)
 
     def test_pair_at_end(self):
-        """Prueba un caso donde la solución está al final de la lista."""
-        m = 12
-        cost = [1, 9, 3, 5, 7]
+        """
+        Prueba un caso donde la ÚNICA solución está al final de la lista.
+        """
+        m = 13
+        cost = [1, 2, 4, 5, 8]  # La única combinación que suma 13 es 5 + 8
         expected = [4, 5]
         result = icecreamParlor(m, cost)
         self.assertEqual(sorted(result), expected)
