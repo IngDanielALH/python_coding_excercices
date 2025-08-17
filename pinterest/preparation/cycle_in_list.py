@@ -29,5 +29,19 @@ Note: If the list is empty, head will be null.
 """
 
 
-def has_cycle(head):
+class SinglyLinkedListNode:
+    def __init__(self, node_data):
+        self.data = node_data
+        self.next = None
+
+
+def has_cycle(head: SinglyLinkedListNode):
+    current_node = head
+    visited = set()
+    while current_node is not None:
+        if current_node in visited:
+            return 1
+        visited.add(current_node)
+        current_node = current_node.next
+    return 0
     pass
