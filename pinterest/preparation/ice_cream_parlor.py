@@ -10,5 +10,34 @@ The two flavors that cost 1 and 5 meet the criteria. Using 1-based indexing, the
 """
 
 
-def icecreamParlor(m, arr):
+def create_dicctionary(prices):
+    position = 1
+    dict_prices = {}
+    for price in prices:
+        if price in dict_prices:
+            dict_prices[price] = [dict_prices[price], position]
+        else:
+            dict_prices[price] = position
+        position += 1
+    return dict_prices
+
+
+def icecreamParlor2(money, prices):
+    dict_prices = create_dicctionary(prices)
+    for price in prices:
+        target = money - price
+        if target in dict_prices.keys():
+            if isinstance(dict_prices[target], list):
+                return dict_prices[target]
+            else:
+                return dict_prices[price], dict_prices[target]
     pass
+
+
+def icecreamParlor(money, prices):
+    seen_prices = {}
+    for i, price in enumerate(prices):
+        target = money - price
+        if target in seen_prices:
+            return [seen_prices[target], i + 1]
+        seen_prices[price] = i + 1
