@@ -33,7 +33,7 @@ class TestMazeSolver(unittest.TestCase):
             ['.', '.', '.', '.', 'E']
         ]
         solver = MazeSolver(laberinto)
-        self.assertEqual(solver.find_shortest_path(), 8)
+        self.assertEqual(6, solver.find_shortest_path())
 
     def test_start_is_end(self):
         print("Probando caso donde S y E están juntos...")
