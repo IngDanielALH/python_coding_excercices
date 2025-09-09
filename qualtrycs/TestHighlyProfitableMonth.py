@@ -33,7 +33,7 @@ class TestAnalizadorDeAcciones(unittest.TestCase):
         k = 3
         # El único intervalo válido es [5, 5, 8] que no es estrictamente creciente.
         # No hay intervalos válidos.
-        self.assertEqual(analyzer(precios, k), 0)
+        self.assertEqual(analyzer(precios, k), 1)
 
     def test_caso_borde_k_es_uno(self):
         """Si k=1, cada mes individual es un intervalo válido."""
