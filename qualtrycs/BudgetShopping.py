@@ -29,21 +29,9 @@ Retorno
 
 
 def budget_shopping(budget, bundle_quantities, bundle_costs):
-    """
-    Determina el número máximo de cuadernos que se pueden comprar.
-
-    Args:
-        budget (int): La cantidad de dinero disponible.
-        bundle_quantities (list[int]): Lista con la cantidad de cuadernos por paquete.
-        bundle_costs (list[int]): Lista con el costo de cada paquete.
-
-    Returns:
-        int: El número máximo de cuadernos que se pueden comprar.
-    """
-    #
-    # --- ¡Aquí va tu código! ---
-    #
-    # Debes implementar la lógica para resolver el problema.
-    # Por ahora, simplemente retorna 0 para que el archivo sea válido.
-    #
-    return 0
+    dp = [0] * (budget + 1)
+    for i in range(1, budget + 1):
+        for cantidad, costo in zip(bundle_quantities, bundle_costs):
+            if i >= costo:
+                dp[i] = max(dp[i], cantidad + dp[i - costo])
+    return dp[-1]
