@@ -1,6 +1,7 @@
 import unittest
 from queries import process_queries
 
+
 class TestProcessQueries(unittest.TestCase):
     def test_example_case(self):
         a = [3, 4]
