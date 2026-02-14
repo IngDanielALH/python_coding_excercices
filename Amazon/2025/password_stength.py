@@ -63,5 +63,4 @@ Possible Solutions:
         Cost: 4
 
 Result: The minimum cost is 1 (by removing 'h').
-cambio para probar reglas de seguridad de la rama
 """
